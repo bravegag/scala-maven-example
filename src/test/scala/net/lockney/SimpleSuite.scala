@@ -5,11 +5,11 @@ import org.scalatest.{DiagrammedAssertions, FunSuite}
 
 class SimpleSuite extends FunSuite {
 
-  println("the thread loading this Suite has ThreadId=%d".format(Thread.currentThread.getId))    
+  println("** loading '%s' Suite with ThreadId=%d".format(this.getClass.getName, Thread.currentThread.getId))    
   Thread.sleep(math.round(10000.0*math.random))
 
   test("An empty Set should have size 0") {
-    println("the thread executing this Test has ThreadId=%d".format(Thread.currentThread.getId))    
+    println("==> executing 'An empty Set should have size 0' test with ThreadId=%d".format(Thread.currentThread.getId))    
     Thread.sleep(math.round(10000.0*math.random))
 
     assert(Set.empty.size == 0)

@@ -5,11 +5,11 @@ import org.scalatest.FlatSpec
 
 class SimpleSpec extends FlatSpec {
 
-  println("the thread loading this Suite has ThreadId=%d".format(Thread.currentThread.getId))    
+  println("** loading '%s' Suite with ThreadId=%d".format(this.getClass.getName, Thread.currentThread.getId))    
   Thread.sleep(math.round(10000.0*math.random))
   
   "SimpleObject" should "accept a String" in {
-    println("the thread executing this Test has ThreadId=%d".format(Thread.currentThread.getId))    
+    println("==> executing 'SimpleObject' should 'accept a String' test with ThreadId=%d".format(Thread.currentThread.getId))    
     Thread.sleep(math.round(10000.0*math.random))
     
     val simple = new SimpleObject("a string")
